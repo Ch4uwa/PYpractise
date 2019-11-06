@@ -1,21 +1,21 @@
-from tkinter import *
+import tkinter as tk
 import time
 
 
-class App(Frame):
+class App(tk.Frame):
 
     def __init__(self, master=None):
-        Frame.__init__(self, master)
+        tk.Frame.__init__(self, master)
         self.master = master
 
         # widget can take all window
-        self.pack(fill=BOTH, expand=1)
+        self.pack(fill=tk.BOTH, expand=1)
         # create and link a button
-        exitButton = Button(self, text='Exit', command=self.clickExitButton)
+        exitButton = tk.Button(self, text='Exit', command=self.clickExitButton)
         # place button at x, y
         exitButton.place(x=0, y=0)
 
-        self.label = Label(text='', fg='Red', font=('Helvetica', 18))
+        self.label = tk.Label(text='', fg='Red', font=('Helvetica', 18))
         self.label.place(relx=0.5, rely=0.5)
         self.update_clock()
 
@@ -28,7 +28,7 @@ class App(Frame):
         exit()
 
 
-root = Tk()
+root = tk.Tk()
 app = App(root)
 root.wm_title('First Clock')
 root.geometry('320x200')
